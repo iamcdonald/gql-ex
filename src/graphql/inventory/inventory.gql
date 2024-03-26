@@ -1,0 +1,11 @@
+type Location {
+  id: ID!
+  name: String!
+  listed: Boolean
+  capacity: Int!
+}
+
+type Query {
+  location(id: String!) : Location
+  locations: [Location]
+}

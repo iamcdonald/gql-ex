@@ -1,0 +1,9 @@
+spectaql:
+  targetDir: ./docs
+
+introspection:
+  schemaFile: ./src/**/graphql/**/*.gql
+
+info:
+  x-url: https://staging.example.com/graphql
+  x-hidePoweredBy: true
