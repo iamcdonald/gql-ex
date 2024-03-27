@@ -5,21 +5,23 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "bob-tsm --node-env=dev --cjs --watch=src src/index.ts",
+    "dev": "bob-tsm --node-env=dev --watch=src src/index.ts",
     "docs:build": "pnpx spectaql docs-config.yml",
-    "docs:serve": "pnpx spectaql -D docs-config.yml"
+    "docs:serve": "pnpx spectaql -D docs-config.yml",
+    "graphql:types": "gql-gen --config codegen.yml"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "fastify": "^4.26.2",
+    "glob": "^10.3.10",
     "graphql": "^16.8.1",
     "mercurius": "^14.0.0",
-    "mercurius-codegen": "^5.0.4"
+    "mercurius-codegen": "^5.0.4",
+    "mercurius-validation": "^5.0.0"
   },
   "devDependencies": {
-    "@graphql-typed-document-node/core": "^3.2.0",
     "bob-tsm": "^1.1.2",
     "prettier": "^3.2.5",
     "spectaql": "^2.3.1"

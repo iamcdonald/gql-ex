@@ -5,7 +5,7 @@ const location: NonNullable<IResolvers["Query"]>["location"] = (_, { id }) => {
     id,
     name: "Space One",
     listed: true,
-    capacity: 12,
+    capacity: 34,
   };
 };
 

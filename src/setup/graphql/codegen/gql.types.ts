@@ -47,7 +47,7 @@ export type Query = {
 };
 
 export type QuerylocationArgs = {
-  id: Scalars["String"];
+  id: Scalars["ID"];
 };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -168,6 +168,33 @@ export type ResolversParentTypes = {
   Query: {};
 };
 
+export type constraintDirectiveArgs = {
+  maximum?: Maybe<Scalars["Int"]>;
+  minimum?: Maybe<Scalars["Int"]>;
+  exclusiveMaximum?: Maybe<Scalars["Int"]>;
+  exclusiveMinimum?: Maybe<Scalars["Int"]>;
+  multipleOf?: Maybe<Scalars["Int"]>;
+  maxLength?: Maybe<Scalars["Int"]>;
+  minLength?: Maybe<Scalars["Int"]>;
+  pattern?: Maybe<Scalars["String"]>;
+  maxProperties?: Maybe<Scalars["Int"]>;
+  minProperties?: Maybe<Scalars["Int"]>;
+  required?: Maybe<Array<Scalars["String"]>>;
+  maxItems?: Maybe<Scalars["Int"]>;
+  minItems?: Maybe<Scalars["Int"]>;
+  uniqueItems?: Maybe<Scalars["Boolean"]>;
+  type?: Maybe<Array<Scalars["String"]>>;
+  format?: Maybe<Scalars["String"]>;
+  schema?: Maybe<Scalars["String"]>;
+};
+
+export type constraintDirectiveResolver<
+  Result,
+  Parent,
+  ContextType = MercuriusContext,
+  Args = constraintDirectiveArgs,
+> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
+
 export type LocationResolvers<
   ContextType = MercuriusContext,
   ParentType extends
@@ -201,6 +228,10 @@ export type QueryResolvers<
 export type Resolvers<ContextType = MercuriusContext> = {
   Location?: LocationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+};
+
+export type DirectiveResolvers<ContextType = MercuriusContext> = {
+  constraint?: constraintDirectiveResolver<any, any, ContextType>;
 };
 
 export type Loader<TReturn, TObj, TParams, TContext> = (

@@ -1,0 +1,3 @@
+[
+  "type Location {\n  id: ID!\n  name: String!\n  listed: Boolean\n  capacity: Int!\n}\n\ntype Query {\n  location(id: ID! @constraint(type: \"string\", minLength: 4)): Location\n  locations: [Location]\n}"
+]

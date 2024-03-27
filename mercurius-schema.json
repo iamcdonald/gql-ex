@@ -1,3 +1,0 @@
-[
-  "type Location {\n  id: ID!\n  name: String!\n  listed: Boolean\n  capacity: Int!\n}\n\ntype Query {\n  location(id: String!): Location\n  locations: [Location]\n}"
-]

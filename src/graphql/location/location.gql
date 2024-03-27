@@ -6,6 +6,6 @@ type Location {
 }
 
 type Query {
-  location(id: String!) : Location
+  location(id: ID! @constraint(type: "string", minLength: 4)): Location
   locations: [Location]
 }
